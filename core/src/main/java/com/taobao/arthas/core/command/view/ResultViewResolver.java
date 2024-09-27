@@ -48,6 +48,7 @@ public class ResultViewResolver {
             registerView(SessionView.class);
             registerView(ResetView.class);
             registerView(ShutdownView.class);
+            registerView(SpringPropertyView.class);
 
             //klass100
             registerView(ClassLoaderView.class);
@@ -80,6 +81,7 @@ public class ResultViewResolver {
             registerView(WatchView.class);
             registerView(VmToolView.class);
             registerView(JFRView.class);
+            registerView(RateLimitView.class);
 
         } catch (Throwable e) {
             logger.error("register result view failed", e);

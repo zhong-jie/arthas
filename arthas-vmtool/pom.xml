@@ -138,10 +138,11 @@
                             </sources>
 
                             <compilerProvider>generic-classic</compilerProvider>
-                            <compilerExecutable>g++</compilerExecutable>
+                            <compilerExecutable>x86_64-w64-mingw32-g++</compilerExecutable>
                             <compilerStartOptions>
-                                <compilerStartOption>-I${JAVA_HOME}/include</compilerStartOption>
-                                <compilerStartOption>-I${JAVA_HOME}/include/${os_name}</compilerStartOption>
+                                <compilerStartOption>"-D__int64=long long"</compilerStartOption>
+                                <compilerStartOption>"-I${JAVA_HOME}/include"</compilerStartOption>
+                                <compilerStartOption>"-I${JAVA_HOME}/include/${os_name}"</compilerStartOption>
                                 <compilerStartOption>-I${project.build.directory}/native/include</compilerStartOption>
                                 <compilerStartOption>${os_arch_option}</compilerStartOption>
                                 <compilerStartOption>-fpic</compilerStartOption>
@@ -150,7 +151,7 @@
                             </compilerStartOptions>
 
                             <linkerOutputDirectory>target</linkerOutputDirectory>
-                            <linkerExecutable>g++</linkerExecutable>
+                            <linkerExecutable>x86_64-w64-mingw32-g++</linkerExecutable>
                             <linkerStartOptions>
                                 <linkerStartOption>${os_arch_option}</linkerStartOption>
                                 <linkerStartOption>-fpic</linkerStartOption>
@@ -223,10 +224,10 @@
                     </sources>
 
                     <compilerProvider>generic-classic</compilerProvider>
-                    <compilerExecutable>g++</compilerExecutable>
+                    <compilerExecutable>x86_64-w64-mingw32-g++</compilerExecutable>
                     <compilerStartOptions>
-                        <compilerStartOption>-I${JAVA_HOME}/include</compilerStartOption>
-                        <compilerStartOption>-I${JAVA_HOME}/include/${os_name}</compilerStartOption>
+                        <compilerStartOption>"-I${JAVA_HOME}/include"</compilerStartOption>
+                        <compilerStartOption>"-I${JAVA_HOME}/include/${os_name}"</compilerStartOption>
                         <compilerStartOption>-I${project.build.directory}/native/include</compilerStartOption>
                         <compilerStartOption>${os_arch_option}</compilerStartOption>
                         <compilerStartOption>-fpic</compilerStartOption>
@@ -235,7 +236,7 @@
                     </compilerStartOptions>
 
                     <linkerOutputDirectory>target</linkerOutputDirectory>
-                    <linkerExecutable>g++</linkerExecutable>
+                    <linkerExecutable>x86_64-w64-mingw32-g++</linkerExecutable>
                     <linkerStartOptions>
                         <linkerStartOption>${os_arch_option}</linkerStartOption>
                         <linkerStartOption>-fpic</linkerStartOption>

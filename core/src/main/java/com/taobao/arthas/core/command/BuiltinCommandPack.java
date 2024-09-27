@@ -28,6 +28,7 @@ import com.taobao.arthas.core.command.monitor200.MemoryCommand;
 import com.taobao.arthas.core.command.monitor200.MonitorCommand;
 import com.taobao.arthas.core.command.monitor200.PerfCounterCommand;
 import com.taobao.arthas.core.command.monitor200.ProfilerCommand;
+import com.taobao.arthas.core.command.monitor200.RateLimitCommand;
 import com.taobao.arthas.core.command.monitor200.StackCommand;
 import com.taobao.arthas.core.command.monitor200.ThreadCommand;
 import com.taobao.arthas.core.command.monitor200.TimeTunnelCommand;
@@ -105,6 +106,8 @@ public class BuiltinCommandPack implements CommandResolver {
         commandClassList.add(ProfilerCommand.class);
         commandClassList.add(VmToolCommand.class);
         commandClassList.add(StopCommand.class);
+        commandClassList.add(SpringPropertyCommand.class);
+        commandClassList.add(RateLimitCommand.class);
         try {
             if (ClassLoader.getSystemClassLoader().getResource("jdk/jfr/Recording.class") != null) {
                 commandClassList.add(JFRCommand.class);

@@ -41,6 +41,9 @@ public class SpyImpl extends AbstractSpy {
                     }
                     adviceListener.before(clazz, methodName, methodDesc, target, args);
                 } catch (Throwable e) {
+                    if (e instanceof RethrowException) {
+                        throw ((RethrowException) e).getRethrowException();
+                    }
                     logger.error("class: {}, methodInfo: {}", clazz.getName(), methodInfo, e);
                 }
             }
@@ -66,6 +69,9 @@ public class SpyImpl extends AbstractSpy {
                     }
                     adviceListener.afterReturning(clazz, methodName, methodDesc, target, args, returnObject);
                 } catch (Throwable e) {
+                    if (e instanceof RethrowException) {
+                        throw ((RethrowException) e).getRethrowException();
+                    }
                     logger.error("class: {}, methodInfo: {}", clazz.getName(), methodInfo, e);
                 }
             }
@@ -90,6 +96,9 @@ public class SpyImpl extends AbstractSpy {
                     }
                     adviceListener.afterThrowing(clazz, methodName, methodDesc, target, args, throwable);
                 } catch (Throwable e) {
+                    if (e instanceof RethrowException) {
+                        throw ((RethrowException) e).getRethrowException();
+                    }
                     logger.error("class: {}, methodInfo: {}", clazz.getName(), methodInfo, e);
                 }
             }
@@ -116,6 +125,9 @@ public class SpyImpl extends AbstractSpy {
                     final InvokeTraceable listener = (InvokeTraceable) adviceListener;
                     listener.invokeBeforeTracing(classLoader, owner, methodName, methodDesc, Integer.parseInt(info[3]));
                 } catch (Throwable e) {
+                    if (e instanceof RethrowException) {
+                        throw ((RethrowException) e).getRethrowException();
+                    }
                     logger.error("class: {}, invokeInfo: {}", clazz.getName(), invokeInfo, e);
                 }
             }
@@ -141,6 +153,9 @@ public class SpyImpl extends AbstractSpy {
                     final InvokeTraceable listener = (InvokeTraceable) adviceListener;
                     listener.invokeAfterTracing(classLoader, owner, methodName, methodDesc, Integer.parseInt(info[3]));
                 } catch (Throwable e) {
+                    if (e instanceof RethrowException) {
+                        throw ((RethrowException) e).getRethrowException();
+                    }
                     logger.error("class: {}, invokeInfo: {}", clazz.getName(), invokeInfo, e);
                 }
             }
@@ -168,6 +183,9 @@ public class SpyImpl extends AbstractSpy {
                     final InvokeTraceable listener = (InvokeTraceable) adviceListener;
                     listener.invokeThrowTracing(classLoader, owner, methodName, methodDesc, Integer.parseInt(info[3]));
                 } catch (Throwable e) {
+                    if (e instanceof RethrowException) {
+                        throw ((RethrowException) e).getRethrowException();
+                    }
                     logger.error("class: {}, invokeInfo: {}", clazz.getName(), invokeInfo, e);
                 }
             }
